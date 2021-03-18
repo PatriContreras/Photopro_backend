@@ -32,11 +32,8 @@ router.post('/', async (req, res) => {
         const result = await create(req.body);
         res.json(result)
 
-
-
     } catch {
         res.json({ error: 'error 422' })
-
     }
 })
 
