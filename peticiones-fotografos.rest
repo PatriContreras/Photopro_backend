@@ -2,9 +2,32 @@ POST  http://localhost:3000/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "prueba",
-    "apellidos":"fotografo",
-    "direccion": "calle",
-    "email": "prueba@gmail.com",
-    "password": "1234"
+    "nombre": "Create",
+    "apellidos":"Calle",
+    "direccion": "calle gran via 7",
+    "email": "ignacio@gmail.com",
+    "password": "holaignacio"
 }
+
+###
+
+GET http://localhost:3000/fotografos
+
+###
+PUT http://localhost:3000/fotografos
+Content-Type:  application/json
+
+{
+    "id": 5,
+    "nombre": "Update",
+    "apellidos":"update",
+    "direccion": "calle gran via 7",
+    "email": "ignacio@gmail.com",
+    "password": "holaignacio"
+}
+
+###
+
+DELETE http://localhost:3000/fotografos/5 
+
+

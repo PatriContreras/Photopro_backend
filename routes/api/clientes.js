@@ -1,8 +1,7 @@
 const { getAll, getById, create, updateById, deleteById } = require('../../models/cliente');
 
-
-
 const router = require('express').Router();
+
 
 router.get('/', async (req, res) => {
     try {
