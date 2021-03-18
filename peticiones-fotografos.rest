@@ -1,0 +1,10 @@
+POST  http://localhost:3000/fotografos
+Content-Type:  application/json
+
+{
+    "nombre": "prueba",
+    "apellidos":"fotografo",
+    "direccion": "calle",
+    "email": "prueba@gmail.com",
+    "password": "1234"
+}
