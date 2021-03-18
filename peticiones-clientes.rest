@@ -1,0 +1,36 @@
+GET http://localhost:3000/clientes
+
+###
+
+GET http://localhost:3000/clientes/1
+
+###
+
+POST http://localhost:3000/clientes
+Content-Type:  application/json
+
+{
+    "nombre": "pppp",
+    "apellidos":"campos",
+    "direccion": "calle",
+    "email": "beacampos1227@gmail.com",
+    "password": "1234"
+}
+
+###
+
+PUT http://localhost:3000/clientes
+Content-Type:  application/json
+
+{
+    "id": 1,
+    "nombre": "patricia",
+    "apellidos":"campos",
+    "direccion": "calle",
+    "email": "beacampos1227@gmail.com",
+    "password": "1234"
+}
+
+###
+
+DELETE http://localhost:3000/clientes/
