@@ -58,6 +58,20 @@ const getById = (id) => {
 
 }
 
+const getByEmail = (email) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM fotografos where email = ?',
+            [email],
+            (err, result) => {
+                if (err) return reject(err);
+                if (result.length === 0) return resolve(null)
+                resolve(rows[0]);
+            })
+    })
+
+}
+
+
 module.exports = {
-    create, getAll, updateById, deleteById, getById
+    create, getAll, updateById, deleteById, getById, getByEmail
 }
