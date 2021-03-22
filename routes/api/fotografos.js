@@ -1,5 +1,5 @@
 
-const { create, getAll, getById, updateById, deleteById, getByEmail } = require('../../models/fotografo');
+const { create, getAll, getById, getByEmail } = require('../../models/fotografo');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
@@ -7,7 +7,7 @@ const router = require('express').Router();
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body)
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
         const result = await create(req.body);
         res.json(result)
 
@@ -21,13 +21,14 @@ router.post('/login_fotografo', async (req, res) => {
     if (fotografo) {
 
         const iguales = bcrypt.compareSync(req.body.password, fotografo.password);
-
+        console.log(iguales);
         if (iguales) {
             res.json({
                 success: 'Login correcto',
-                token: createToken(fotografo)
+                token: createToken(fotografo),
 
             })
+
         } else {
             res.json({ error: 'Error en email y/o contraseña(contraseña)' });
         }
@@ -57,29 +58,12 @@ router.get('/:idFotografo', async (req, res) => {
     }
 })
 
-router.put('/', async (req, res) => {
-    try {
-        const fotografo = await updateById(req.body)
-        res.json(fotografo)
-    } catch (err) {
-        res.json({ error: '422' })
-    }
-})
 
-router.delete('/:idFotografo', async (req, res) => {
-    try {
-        const result = await deleteById(req.params.idFotografo)
-        res.json(result)
-    } catch (err) {
-        res.json({ error: 'error 422' })
-    }
-})
 
-function createToken(pFotografo) {
+
+function createToken(fotografo) {
     const data = {
-        fotografoId: pFotografo.id,
-
-
+        fotografo: fotografo.id
     }
     return jwt.sign(data, 'llave de acceso');
 }

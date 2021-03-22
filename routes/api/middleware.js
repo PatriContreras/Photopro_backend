@@ -28,7 +28,7 @@ const checkToken = (req, res, next) => {
     //incluir en la peticion el id de usuario que esta realizando dicha peticion 
     req.fotografoId = data.fotografoId;
 
-    next();
+    next(); // cuando acaba y se cumplotodo aquello y llama a la siguiente funcion
 
 
 }

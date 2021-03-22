@@ -1,5 +1,5 @@
 const create = ({ nombre, apellidos, email, direccion, password }) => {
-
+    console.log(password);
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO fotografos (nombre, apellidos, direccion, email, password) values (?, ?, ?, ?, ?)', [nombre, apellidos, direccion, email, password], (err, result) => {
             if (err) {
@@ -65,7 +65,7 @@ const getByEmail = (email) => {
             (err, result) => {
                 if (err) return reject(err);
                 if (result.length === 0) return resolve(null)
-                resolve(rows[0]);
+                resolve(result[0]);
             })
     })
 

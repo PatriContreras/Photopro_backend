@@ -2,14 +2,27 @@ POST  http://localhost:3000/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "Create",
+    "nombre": "Pepe",
     "apellidos":"Calle",
     "direccion": "calle gran via 7",
-    "email": "ignacio@gmail.com",
+    "email": "pepe@gmail.com",
+    "password": "holaignacio"
+}
+
+
+###
+
+POST http://localhost:3000/fotografos/login_fotografo
+Content-Type:  application/json
+
+{
+    "email": "pepe@gmail.com",
     "password": "holaignacio"
 }
 
 ###
+
+
 
 GET http://localhost:3000/fotografos
 
