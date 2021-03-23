@@ -15,8 +15,10 @@ Content-Type:  application/json
 POST http://localhost:3000/fotografos/login_fotografo
 Content-Type:  application/json
 
+
+
 {
-    "email": "iborio@gmail.com",
+    "email": "liborio@gmail.com",
     "password": "holaliborio"
 }
 
@@ -27,20 +29,25 @@ Content-Type:  application/json
 GET http://localhost:3000/fotografos
 
 ###
-PUT http://localhost:3000/fotografos
+PUT http://localhost:3000/api/fotografos
 Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE4LCJjYWR1Y2EiOjE2MTY0OTU4OTUsImlhdCI6MTYxNjQ5NDA5NX0.Z6eviDWly6jF5V8uNGko11ZB7xkKwK150_n2_33-R-c
 
 {
-    "id": 5,
-    "nombre": "Update",
-    "apellidos":"update",
-    "direccion": "calle gran via 7",
-    "email": "ignacio@gmail.com",
+    "id": 18,
+    "nombre": "adios",
+    "apellidos":"calle",
+    "direccion": "calle 7",
+    "email": "igna@gmail.com",
     "password": "holaignacio"
 }
 
 ###
 
-DELETE http://localhost:3000/fotografos/5 
+DELETE http://localhost:3000/api/fotografos/18
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE4LCJjYWR1Y2EiOjE2MTY0OTU4OTUsImlhdCI6MTYxNjQ5NDA5NX0.Z6eviDWly6jF5V8uNGko11ZB7xkKwK150_n2_33-R-c
+
+
+
 
 

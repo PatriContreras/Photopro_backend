@@ -1,4 +1,5 @@
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const dayjs = require('dayjs');
 
 const checkToken = (req, res, next) => {
 
@@ -19,6 +20,11 @@ const checkToken = (req, res, next) => {
         return res.json({ error: 'maaal' })
 
     }
+
+    if (dayjs().unix() > data.caduca) {
+        return res.json({ error: 'token caducado' })
+    }
+
 
     // comprobar si el token está caducado
 
