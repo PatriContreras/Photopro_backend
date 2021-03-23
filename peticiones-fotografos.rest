@@ -16,7 +16,7 @@ POST http://localhost:3000/fotografos/login_fotografo
 Content-Type:  application/json
 
 {
-    "email": "liborio@gmail.com",
+    "email": "iborio@gmail.com",
     "password": "holaliborio"
 }
 
