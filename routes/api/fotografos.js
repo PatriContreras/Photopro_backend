@@ -29,7 +29,7 @@ router.post('/login_fotografo', async (req, res) => {
             res.json({
                 success: 'Login correcto',
                 token: createToken(fotografo),
-
+                id: fotografo.id
             })
 
         } else {

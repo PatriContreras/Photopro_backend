@@ -1,51 +1,51 @@
-POST  http://localhost:3000/fotografos
+POST  http://localhost:3000/api/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "Prueba",
-    "apellidos":"Calle",
-    "direccion": "calle gran via 7",
-    "email": "liborio@gmail.com",
-    "password": "holaliborio"
+    "nombre": "Gloria",
+    "apellidos":"Zamora",
+    "direccion": "calle castellana 7",
+    "email": "gloria@gmail.com",
+    "password": "holagloria"
 }
 
 
 ###
 
-POST http://localhost:3000/fotografos/login_fotografo
+
+POST http://localhost:3000/api/fotografos/login_fotografo
 Content-Type:  application/json
 
-
-
 {
-    "email": "liborio@gmail.com",
-    "password": "holaliborio"
+    "email": "bea@gmail.com",
+    "password": "holabea"
 }
 
 ###
 
 
 
-GET http://localhost:3000/fotografos
+GET http://localhost:3000/api/fotografos
 
 ###
-PUT http://localhost:3000/api/fotografos
+PUT http://localhost:3000/api/fotografos/private
 Content-Type:  application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE4LCJjYWR1Y2EiOjE2MTY0OTU4OTUsImlhdCI6MTYxNjQ5NDA5NX0.Z6eviDWly6jF5V8uNGko11ZB7xkKwK150_n2_33-R-c
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE3LCJjYWR1Y2EiOjE2MTY1MTE5MTQsImlhdCI6MTYxNjUxMDExNH0.4Mv_4LlOPhTz5yT8BSZped8n7ixQ3UcIbh6p_pG8cg0
+
 
 {
-    "id": 18,
-    "nombre": "adios",
-    "apellidos":"calle",
-    "direccion": "calle 7",
-    "email": "igna@gmail.com",
-    "password": "holaignacio"
+    "id": 17,
+    "nombre": "Zamora",
+    "apellidos":"Campos de la Oliva",
+    "direccion": "calle neolan",
+    "email": "bea@gmail.com",
+    "password": "holabea"
 }
 
 ###
 
-DELETE http://localhost:3000/api/fotografos/18
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE4LCJjYWR1Y2EiOjE2MTY0OTU4OTUsImlhdCI6MTYxNjQ5NDA5NX0.Z6eviDWly6jF5V8uNGko11ZB7xkKwK150_n2_33-R-c
+DELETE http://localhost:3000/api/fotografos/private/16
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE1LCJjYWR1Y2EiOjE2MTY1MTEyMjEsImlhdCI6MTYxNjUwOTQyMX0.kksXlmslY6YktZh5uA87JrxZd7HGefdE4FxThaoJCA4
 
 
 

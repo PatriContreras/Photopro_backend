@@ -8,7 +8,7 @@ const fotografoWareRouter = require('./api/fotografoWare')
 
 
 router.use('/clientes', clientesApiRouter);
-router.use('/fotografos', checkToken, fotografoWareRouter)
+router.use('/fotografos/private', checkToken, fotografoWareRouter)
 router.use('/fotografos', fotografosApiRouter)
 
 module.exports = router;
