@@ -1,4 +1,7 @@
 const { getAll, create } = require('../../models/cliente');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const dayjs = require('dayjs')
 
 const router = require('express').Router();
 
@@ -15,7 +18,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body)
+        req.body.password = bcrypt.hashSync(req.body.password, 10)
         const result = await create(req.body);
         res.json(result)
 

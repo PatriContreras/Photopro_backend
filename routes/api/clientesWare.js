@@ -1,4 +1,7 @@
+
 const { getById, updateById, deleteById } = require("../../models/cliente");
+
+const router = require('express').Router();
 
 router.get('/:idCliente', async (req, res) => {
     try {
@@ -31,3 +34,6 @@ router.delete('/:idCliente', async (req, res) => {
     }
 
 });
+module.exports = router;
+
+

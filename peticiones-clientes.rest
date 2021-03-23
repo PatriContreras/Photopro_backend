@@ -2,7 +2,7 @@ GET http://localhost:3000/api/clientes
 
 ###
 
-GET http://localhost:3000/api/clientes/private/1
+GET http://localhost:3000/api/clientes/private/10
 
 ###
 
@@ -33,4 +33,4 @@ Content-Type:  application/json
 
 ###
 
-DELETE http://localhost:3000/api/clientes/4/private
+DELETE http://localhost:3000/api/clientes/private/1
