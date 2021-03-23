@@ -19,10 +19,12 @@ router.post('/', async (req, res) => {
 
 router.post('/login_fotografo', async (req, res) => {
     const fotografo = await getByEmail(req.body.email)
+    console.log('fotografo:', fotografo);
     if (fotografo) {
 
         const iguales = bcrypt.compareSync(req.body.password, fotografo.password);
-        console.log(iguales);
+
+        console.log('iguales', iguales);
         if (iguales) {
             res.json({
                 success: 'Login correcto',
