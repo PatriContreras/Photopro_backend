@@ -1,16 +1,16 @@
-GET http://localhost:3000/clientes
+GET http://localhost:3000/api/clientes
 
 ###
 
-GET http://localhost:3000/clientes/1
+GET http://localhost:3000/api/clientes/private/1
 
 ###
 
-POST http://localhost:3000/clientes
+POST http://localhost:3000/api/clientes
 Content-Type:  application/json
 
 {
-    "nombre": "pppp",
+    "nombre": "Paloma",
     "apellidos":"campos",
     "direccion": "calle",
     "email": "beacampos1227@gmail.com",
@@ -19,13 +19,13 @@ Content-Type:  application/json
 
 ###
 
-PUT http://localhost:3000/clientes
+PUT http://localhost:3000/api/clientes/private
 Content-Type:  application/json
 
 {
     "id": 1,
-    "nombre": "patricia",
-    "apellidos":"campos",
+    "nombre": "Diego",
+    "apellidos":"Garcia",
     "direccion": "calle",
     "email": "beacampos1227@gmail.com",
     "password": "1234"
@@ -33,4 +33,4 @@ Content-Type:  application/json
 
 ###
 
-DELETE http://localhost:3000/clientes/
+DELETE http://localhost:3000/api/clientes/4/private
