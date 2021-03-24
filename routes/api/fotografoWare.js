@@ -7,6 +7,7 @@ const router = require('express').Router();
 
 router.put('/', async (req, res) => {
     try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
         const fotografo = await updateById(req.body)
         res.json(fotografo)
     } catch (err) {

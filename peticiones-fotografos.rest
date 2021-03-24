@@ -17,8 +17,8 @@ POST http://localhost:3000/api/fotografos/login_fotografo
 Content-Type:  application/json
 
 {
-    "email": "bea@gmail.com",
-    "password": "holabea"
+    "email": "gloria@gmail.com",
+    "password": "holagloria"
 }
 
 ###
@@ -30,15 +30,15 @@ GET http://localhost:3000/api/fotografos
 ###
 PUT http://localhost:3000/api/fotografos/private
 Content-Type:  application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE3LCJjYWR1Y2EiOjE2MTY1MTE5MTQsImlhdCI6MTYxNjUxMDExNH0.4Mv_4LlOPhTz5yT8BSZped8n7ixQ3UcIbh6p_pG8cg0
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE5LCJjYWR1Y2EiOjE2MTY1Nzc4MDUsImlhdCI6MTYxNjU3NjAwNX0.EYLuGstXdbZxTPiysdstXoN_VuKMx1Kj-ycPBjFWiyY
 
 
 {
-    "id": 17,
+    "id": 19,
     "nombre": "Zamora",
     "apellidos":"Campos de la Oliva",
     "direccion": "calle neolan",
-    "email": "bea@gmail.com",
+    "email": "gloria@gmail.com",
     "password": "holabea"
 }
 
