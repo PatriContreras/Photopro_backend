@@ -1,5 +1,6 @@
 
 const { create, getAll, getById, getByEmail } = require('../../models/fotografo');
+const { checkToken } = require('./middleware')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs');
@@ -52,14 +53,14 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:idFotografo', async (req, res) => {
+router.get('/perfil', checkToken, async (req, res) => {
     try {
-        const fotografo = await getById(req.params.idFotografo)
+        const fotografo = await getById(req.fotografoId)
         res.json(fotografo)
     } catch (err) {
         res.json({ error: '422' })
     }
-})
+}) // OK
 
 
 

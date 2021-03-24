@@ -2,11 +2,11 @@ POST  http://localhost:3000/api/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "Gloria",
+    "nombre": "fia",
     "apellidos":"Zamora",
     "direccion": "calle castellana 7",
-    "email": "gloria@gmail.com",
-    "password": "holagloria"
+    "email": "fia@gmail.com",
+    "password": "holafia"
 }
 
 
@@ -17,8 +17,8 @@ POST http://localhost:3000/api/fotografos/login_fotografo
 Content-Type:  application/json
 
 {
-    "email": "gloria@gmail.com",
-    "password": "holagloria"
+    "email": "fia@gmail.com",
+    "password": "holafia"
 }
 
 ###
@@ -30,22 +30,22 @@ GET http://localhost:3000/api/fotografos
 ###
 PUT http://localhost:3000/api/fotografos/private
 Content-Type:  application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE5LCJjYWR1Y2EiOjE2MTY1Nzc4MDUsImlhdCI6MTYxNjU3NjAwNX0.EYLuGstXdbZxTPiysdstXoN_VuKMx1Kj-ycPBjFWiyY
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjQsImNhZHVjYSI6MTYxNjU5MTU2MiwiaWF0IjoxNjE2NTg5NzYyfQ.1Hhnyx0ymaAc6t4yHhKsSvEAQxJMcwuMUi_9CJmzvao
 
 
 {
-    "id": 19,
+    "id": 24,
     "nombre": "Zamora",
     "apellidos":"Campos de la Oliva",
     "direccion": "calle neolan",
-    "email": "gloria@gmail.com",
+    "email": "a@gmail.com",
     "password": "holabea"
 }
 
 ###
 
-DELETE http://localhost:3000/api/fotografos/private/16
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm8iOjE1LCJjYWR1Y2EiOjE2MTY1MTEyMjEsImlhdCI6MTYxNjUwOTQyMX0.kksXlmslY6YktZh5uA87JrxZd7HGefdE4FxThaoJCA4
+DELETE http://localhost:3000/api/fotografos/private
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjUsImNhZHVjYSI6MTYxNjU5ODYxMywiaWF0IjoxNjE2NTk2ODEzfQ.U30rIaT6eYdTRKIbUfIwijyrzvG1JLla3ctK_L_QmW0
 
 
 
