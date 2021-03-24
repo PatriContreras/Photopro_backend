@@ -1,5 +1,6 @@
 
 const { getById, updateById, deleteById } = require("../../models/cliente");
+const bcrypt = require('bcrypt');
 
 const router = require('express').Router();
 
@@ -16,10 +17,11 @@ router.get('/:idCliente', async (req, res) => {
 
 router.put('/', async (req, res) => {
     try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10)
         const result = await updateById(req.body);
         res.json(result)
     } catch {
-        res.json({ error: 'error 422 Update ClientesWare' })
+        res.json({ error: 'clinentes update error 422' })
     }
 });
 

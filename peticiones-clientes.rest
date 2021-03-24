@@ -10,10 +10,20 @@ POST http://localhost:3000/api/clientes
 Content-Type:  application/json
 
 {
-    "nombre": "Paloma",
-    "apellidos":"campos",
-    "direccion": "calle",
-    "email": "beacampos1227@gmail.com",
+    "nombre": "patricia",
+    "apellidos":"contreras",
+    "direccion": "calle dos",
+    "email": "patri12@gmail.com",
+    "password": "1234"
+}
+###
+
+
+POST http://localhost:3000/api/clientes/login_cliente
+Content-Type:  application/json
+
+{
+    "email": "patri12@gmail.com",
     "password": "1234"
 }
 
@@ -21,16 +31,18 @@ Content-Type:  application/json
 
 PUT http://localhost:3000/api/clientes/private
 Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlIjoxNiwiY2FkdWNhIjoxNjE2NTc4NDc1LCJpYXQiOjE2MTY1NzY2NzV9.ftdY66LuJ1uwzU4Yw-cxNZe-wopBabyxlrT9SDVtBHE
 
 {
-    "id": 1,
+    "id": 16,
     "nombre": "Diego",
     "apellidos":"Garcia",
-    "direccion": "calle",
-    "email": "beacampos1227@gmail.com",
+    "direccion": "calle bar",
+    "email": "diegoantonio@gmail.com",
     "password": "1234"
 }
 
 ###
 
-DELETE http://localhost:3000/api/clientes/private/1
+DELETE http://localhost:3000/api/clientes/private/16
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlIjoxNiwiY2FkdWNhIjoxNjE2NTc4NDc1LCJpYXQiOjE2MTY1NzY2NzV9.ftdY66LuJ1uwzU4Yw-cxNZe-wopBabyxlrT9SDVtBHE

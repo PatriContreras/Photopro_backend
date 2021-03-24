@@ -56,6 +56,20 @@ const getAll = () => {
         });
     })
 }
+
+const getByEmail = (email) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM clientes where email = ?',
+            [email],
+            (err, result) => {
+                if (err) return reject(err);
+                if (result.length === 0) return resolve(null)
+                resolve(result[0]);
+            })
+    })
+
+}
+
 module.exports = {
-    getAll, create, getById, updateById, deleteById
+    getAll, create, getById, updateById, deleteById, getByEmail
 }

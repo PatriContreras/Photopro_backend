@@ -66,7 +66,7 @@ router.get('/:idFotografo', async (req, res) => {
 
 function createToken(fotografo) {
     const data = {
-        fotografo: fotografo.id,
+        fotografoId: fotografo.id,
         caduca: dayjs().add(30, 'minutes').unix()
     }
     return jwt.sign(data, 'llave de acceso');
