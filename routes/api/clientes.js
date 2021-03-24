@@ -1,19 +1,20 @@
-const { getAll, create, getByEmail } = require('../../models/cliente');
+const { getAll, create, getByEmail, getById } = require('../../models/cliente');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const dayjs = require('dayjs')
+const dayjs = require('dayjs');
+const { checkTokenCliente } = require('./middleware');
 
 const router = require('express').Router();
 
 
-router.get('/', async (req, res) => {
+/* router.get('/', async (req, res) => {
     try {
         const clientes = await getAll();
         res.json(clientes)
     } catch (error) {
         res.json({ error: 'error 422' })
     }
-})
+}) */
 
 
 router.post('/', async (req, res) => {
@@ -44,11 +45,15 @@ router.post('/login_cliente', async (req, res) => {
     } else {
         res.json({ error: 'error contraseña y/o email(email)' })
     }
+
+
 });
+
+
 
 function createToken(cliente) {
     const data = {
-        cliente: cliente.id,
+        clienteId: cliente.id,
         caduca: dayjs().add(30, 'minutes').unix()
     }
     return jwt.sign(data, 'llave de acceso')

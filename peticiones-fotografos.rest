@@ -2,11 +2,11 @@ POST  http://localhost:3000/api/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "fia",
+    "nombre": "david",
     "apellidos":"Zamora",
-    "direccion": "calle castellana 7",
-    "email": "fia@gmail.com",
-    "password": "holafia"
+    "direccion": "calla 7",
+    "email": "david@gmail.com",
+    "password": "holadavid"
 }
 
 

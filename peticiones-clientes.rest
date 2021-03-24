@@ -2,7 +2,8 @@ GET http://localhost:3000/api/clientes
 
 ###
 
-GET http://localhost:3000/api/clientes/private/10
+GET http://localhost:3000/api/clientes/private/perfil
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjIwLCJjYWR1Y2EiOjE2MTY2MDI0MDUsImlhdCI6MTYxNjYwMDYwNX0.DdSUKheva_oROFsp4nUHd85yHPTgS-M2oDkeHEGSbKk
 
 ###
 
@@ -10,10 +11,10 @@ POST http://localhost:3000/api/clientes
 Content-Type:  application/json
 
 {
-    "nombre": "patricia",
+    "nombre": "ramon",
     "apellidos":"contreras",
-    "direccion": "calle dos",
-    "email": "patri12@gmail.com",
+    "direccion": "calle seis",
+    "email": "ramon@gmail.com",
     "password": "1234"
 }
 ###
@@ -23,7 +24,7 @@ POST http://localhost:3000/api/clientes/login_cliente
 Content-Type:  application/json
 
 {
-    "email": "patri12@gmail.com",
+    "email": "rosario@gmail.com",
     "password": "1234"
 }
 
@@ -31,18 +32,19 @@ Content-Type:  application/json
 
 PUT http://localhost:3000/api/clientes/private
 Content-Type:  application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlIjoxNiwiY2FkdWNhIjoxNjE2NTc4NDc1LCJpYXQiOjE2MTY1NzY2NzV9.ftdY66LuJ1uwzU4Yw-cxNZe-wopBabyxlrT9SDVtBHE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE5LCJjYWR1Y2EiOjE2MTY2MDIxNDAsImlhdCI6MTYxNjYwMDM0MH0.swHxuDScd1RZ-AU0LtyJgrRnmIHIzSpwXiG_y5TNLVs
+
 
 {
-    "id": 16,
-    "nombre": "Diego",
-    "apellidos":"Garcia",
-    "direccion": "calle bar",
-    "email": "diegoantonio@gmail.com",
+    "nombre": "rosa",
+    "apellidos":"contreras",
+    "direccion": "calle seis",
+    "email": "rosario@gmail.com",
     "password": "1234"
 }
 
+
 ###
 
-DELETE http://localhost:3000/api/clientes/private/16
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlIjoxNiwiY2FkdWNhIjoxNjE2NTc4NDc1LCJpYXQiOjE2MTY1NzY2NzV9.ftdY66LuJ1uwzU4Yw-cxNZe-wopBabyxlrT9SDVtBHE
+DELETE http://localhost:3000/api/clientes/private
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE5LCJjYWR1Y2EiOjE2MTY2MDIxNDAsImlhdCI6MTYxNjYwMDM0MH0.swHxuDScd1RZ-AU0LtyJgrRnmIHIzSpwXiG_y5TNLVs
