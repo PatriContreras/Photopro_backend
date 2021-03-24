@@ -19,7 +19,7 @@ router.put('/', async (req, res) => {
         const result = await updateById(req.body);
         res.json(result)
     } catch {
-        res.json({ error: 'error 422' })
+        res.json({ error: 'error 422 Update ClientesWare' })
     }
 });
 
