@@ -29,7 +29,9 @@ POST http://localhost:3000/api/fotografos/filter
 Content-Type:  application/json
 
 {
-    "bodas":true
+    "modelos": true,
+    "retrato": true,
+    "publicidad": true
 }
 
 ###

@@ -72,19 +72,21 @@ const getByEmail = (email) => {
 
 }
 
-const getByCategory = (bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes) => {
+const getByCategory = ({ bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes }) => {
     return new Promise((resolve, reject) => {
-        let q = 'SELECT * FROM fotografos where 1=1';
-        if (bodas) q = q + ' or bodas= true '
-        if (eventosnocturnos) q = q + ' or eventosnocturnos= true '
-        if (producto) q = q + ' or producto= true '
-        if (publicidad) q = q + ' or publicidad= true '
-        if (paisaje) q = q + ' or paisaje= true '
-        if (retrato) q = q + ' or retrato= true '
-        if (modelos) q = q + ' or modelos= true '
-        if (artistica) q = q + ' or artistica= true '
-        if (documental) q = q + ' or documental= true '
-        if (deportes) q = q + ' or deportes= true '
+        const ors = [];
+        if (bodas) ors.push('bodas = true')
+        if (eventosnocturnos) ors.push('eventosnocturnos= true')
+        if (producto) ors.push('producto= true')
+        if (publicidad) ors.push('publicidad = true')
+        if (paisaje) ors.push('paisaje = true')
+        if (retrato) ors.push('retrato = true')
+        if (modelos) ors.push('modelos = true')
+        if (artistica) ors.push('artistica = true')
+        if (documental) ors.push('documental = true')
+        if (deportes) ors.push('deportes = true')
+
+        let q = `SELECT * FROM fotografos where 1=1 and (${ors.join(' or ')})`;
 
 
 
