@@ -1,7 +1,7 @@
-const create = ({ nombre, apellidos, email, direccion, password }) => {
+const create = ({ nombre, apellidos, email, direccion, password, bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes }) => {
     console.log(password);
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO fotografos (nombre, apellidos, direccion, email, password) values (?, ?, ?, ?, ?)', [nombre, apellidos, direccion, email, password], (err, result) => {
+        db.query('INSERT INTO fotografos (nombre, apellidos, direccion, email, password, bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, direccion, email, password, bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes], (err, result) => {
             if (err) {
                 console.log(err);
                 return reject(err)
@@ -72,7 +72,38 @@ const getByEmail = (email) => {
 
 }
 
+const getByCategory = (bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes) => {
+    return new Promise((resolve, reject) => {
+        let q = 'SELECT * FROM fotografos where 1=1';
+        if (bodas) q = q + ' or bodas= true '
+        if (eventosnocturnos) q = q + ' or eventosnocturnos= true '
+        if (producto) q = q + ' or producto= true '
+        if (publicidad) q = q + ' or publicidad= true '
+        if (paisaje) q = q + ' or paisaje= true '
+        if (retrato) q = q + ' or retrato= true '
+        if (modelos) q = q + ' or modelos= true '
+        if (artistica) q = q + ' or artistica= true '
+        if (documental) q = q + ' or documental= true '
+        if (deportes) q = q + ' or deportes= true '
+
+
+
+        console.log(q);
+
+
+
+        db.query(q,
+            (err, result) => {
+                if (err) return reject(err);
+                resolve(result);
+            })
+    })
+}
+
+
+
+
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory
 }

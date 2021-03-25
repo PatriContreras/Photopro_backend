@@ -5,8 +5,9 @@ Content-Type:  application/json
     "nombre": "david",
     "apellidos":"Zamora",
     "direccion": "calla 7",
-    "email": "david@gmail.com",
+    "email": "d@gmail.com",
     "password": "holadavid"
+    
 }
 
 
@@ -19,6 +20,16 @@ Content-Type:  application/json
 {
     "email": "fia@gmail.com",
     "password": "holafia"
+}
+
+###
+
+
+POST http://localhost:3000/api/fotografos/filter
+Content-Type:  application/json
+
+{
+    "bodas":true
 }
 
 ###

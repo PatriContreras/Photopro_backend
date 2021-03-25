@@ -1,5 +1,5 @@
 
-const { create, getAll, getById, getByEmail } = require('../../models/fotografo');
+const { create, getAll, getById, getByEmail, getByCategory } = require('../../models/fotografo');
 const { checkToken } = require('./middleware')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -40,6 +40,20 @@ router.post('/login_fotografo', async (req, res) => {
     } else {
         res.json({ error: 'Error en email y/o contraeña(email)' })
     }
+
+
+})
+
+router.post('/filter', async (req, res) => {
+    try {
+
+        const fotografos = await getByCategory(req.body)
+        res.json(fotografos)
+
+    } catch (error) {
+        res.json({ error: 'error 422' })
+    }
+
 
 
 })
