@@ -1,4 +1,4 @@
-
+/* 
 const getAll = () => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM imagenes', (err, result) => {
@@ -31,9 +31,9 @@ const getById = (pId) => {
     })
 
 
-}
+} */
 
-const create = (url) => {
+const createImage = (url) => {
 
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO imagenes (url) values ?', [url], (err, result) => {
@@ -48,5 +48,5 @@ const create = (url) => {
 }
 
 module.exports = {
-    getAll, getById, deleteById, create
+    createImage
 }

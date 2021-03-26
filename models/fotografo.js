@@ -1,8 +1,3 @@
-const mysql = require('mysql');
-const Schema = mysql.Schema;
-
-
-
 
 
 const create = ({ nombre, apellidos, email, direccion, password, bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes }) => {

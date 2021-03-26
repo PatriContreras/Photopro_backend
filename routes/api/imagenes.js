@@ -1,8 +1,36 @@
-const { getAll, getById, deleteById, create } = require('../../models/imagenes');
+const { createImage } = require('../../models/imagenes');
+const multer = require('multer');
+const { checkToken } = require('./middleware');
+const upload = multer({ dest: 'public/images' });
+const fs = require('fs')
 
 const router = require('express').Router();
 
-router.get('/', async (req, res) => {
+
+
+
+router.post('/imagen', checkToken, upload.single('imagen'), async (req, res) => {
+    // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
+    const extension = '.' + req.file.mimetype.split('/')[1];
+    // Obtengo el nombre de la nueva imagen
+    const newName = req.file.filename + extension;
+    // Obtengo la ruta donde estará, adjuntándole la extensión
+    const newPath = req.file.path + extension;
+    // Muevo la imagen para que resiba la extensión
+    fs.renameSync(req.file.path, newPath);
+
+    // Modifico el BODY para poder incluir el nombre de la imagen en la BD
+    req.body.imagen = newName;
+
+    try {
+        const newProducto = await Producto.createImage(req.body);
+        res.json(newProducto);
+    } catch (err) {
+        res.json(err);
+    }
+
+});
+/* router.get('/', async (req, res) => {
     try {
         const imagenes = await getAll();
         res.json(imagenes)
@@ -37,6 +65,8 @@ router.post('/', async (req, res) => {
         res.json({ error: 'error 422' })
     }
 })
+ */
+
 
 
 module.exports = router;
