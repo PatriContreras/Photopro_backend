@@ -36,7 +36,7 @@ const getById = (pId) => {
 const create = (url) => {
 
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO imagenes (url) values (?)', [url], (err, result) => {
+        db.query('INSERT INTO imagenes (url) values ?', [url], (err, result) => {
             if (err) {
                 console.log(err);
                 return reject(err)
