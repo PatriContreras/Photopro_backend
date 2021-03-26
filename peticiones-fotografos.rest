@@ -2,11 +2,14 @@ POST  http://localhost:3000/api/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "david",
+    "nombre": "davide",
     "apellidos":"Zamora",
     "direccion": "calla 7",
-    "email": "d@gmail.com",
-    "password": "holadavid"
+    "email": "davide@gmail.com",
+    "password": "holadavide",
+    "bodas": true,
+    "paisaje": true,
+    "retrato": true
     
 }
 
@@ -18,7 +21,7 @@ POST http://localhost:3000/api/fotografos/login_fotografo
 Content-Type:  application/json
 
 {
-    "email": "fia@gmail.com",
+    "email": "davide@gmail.com",
     "password": "holafia"
 }
 
@@ -52,7 +55,8 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjQsImNh
     "apellidos":"Campos de la Oliva",
     "direccion": "calle neolan",
     "email": "a@gmail.com",
-    "password": "holabea"
+    "password": "holabea",
+ 
 }
 
 ###

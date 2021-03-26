@@ -13,7 +13,8 @@ router.post('/', async (req, res) => {
         const result = await create(req.body);
         res.json(result)
 
-    } catch {
+    } catch (error) {
+        console.log(error);
         res.json({ error: 'error 422' })
     }
 })
