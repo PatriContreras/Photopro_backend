@@ -1,8 +1,3 @@
-const mysql = require('mysql');
-const Schema = mysql.Schema;
-
-
-
 
 
 const create = ({ nombre, apellidos, email, direccion, password, bodas, eventosnocturnos, producto, publicidad, paisaje, retrato, modelos, artistica, documental, deportes }) => {
@@ -119,10 +114,23 @@ const getByCategory = ({ bodas, eventosnocturnos, producto, publicidad, paisaje,
     })
 }
 
+const image = (url) => {
+
+    return new Promise((resolve, reject) => {
+        db.query('INSERT INTO imagenes (url) values ?', [url], (err, result) => {
+            if (err) {
+                console.log(err);
+                return reject(err)
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
 
 
 
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, updatePasswordFotografo
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, updatePasswordFotografo, image
 }

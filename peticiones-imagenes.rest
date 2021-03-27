@@ -1,8 +1,8 @@
 ###
-GET http://localhost:3000/imagenes
+post http://localhost:3000/api/fotografos/imagen
 Content-Type:  application/json
 
+
 {
-    "url": "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg",
-    
+    "url": "Desktop/neolandBootcamp/prueba.png"
 }
