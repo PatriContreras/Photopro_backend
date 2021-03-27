@@ -5,7 +5,7 @@ Content-Type:  application/json
     "nombre": "davide",
     "apellidos":"Zamora",
     "direccion": "calla 7",
-    "email": "davide@gmail.com",
+    "email": "djn@gmail.com",
     "password": "holadavide",
     "bodas": true,
     "paisaje": true,
@@ -21,8 +21,8 @@ POST http://localhost:3000/api/fotografos/login_fotografo
 Content-Type:  application/json
 
 {
-    "email": "davide@gmail.com",
-    "password": "holafia"
+    "email": "andresromero@gmail.com",
+    "password": "Neoland1234"
 }
 
 ###
@@ -37,9 +37,11 @@ Content-Type:  application/json
     "publicidad": true
 }
 
+
 ###
-
-
+POST http://localhost:3000/images/fb5619993e9211fae8164d3e7e368d93.png
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MzksImNhZHVjYSI6MTYxNjg2NzIxMCwiaWF0IjoxNjE2ODY1NDEwfQ.klRH0wdWj1yIv91ggGe8fbJc1csySnrAVjhGhy2kjb4
+###
 
 GET http://localhost:3000/api/fotografos
 

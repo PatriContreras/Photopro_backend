@@ -1,9 +1,14 @@
-const { updateById, deleteById } = require("../../models/fotografo");
+const { updateById, deleteById, image } = require("../../models/fotografo");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { checkToken } = require("./middleware");
-
 const router = require('express').Router();
+const multer = require('multer');
+const upload = multer({ dest: 'public/images' });
+const fs = require('fs')
+
+
+
 
 
 router.put('/', checkToken, async (req, res) => {
@@ -36,5 +41,30 @@ router.delete('/', checkToken, async (req, res) => {
     }
 })
 
+
+router.post('/upload', checkToken, upload.single('imagen'), async (req, res) => {
+    // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
+    const extension = '.' + req.file.mimetype.split('/')[1];
+
+    // Obtengo el nombre de la nueva imagen
+    const newName = req.file.filename + extension;
+    // Obtengo la ruta donde estará, adjuntándole la extensión
+    const newPath = req.file.path + extension;
+    // Muevo la imagen para que resiba la extensión
+    fs.renameSync(req.file.path, newPath);
+
+    // Modifico el BODY para poder incluir el nombre de la imagen en la BD
+    req.body.imagen = newName;
+
+
+    try {
+        const newImagen = await image(req.body);
+        console.log(req.body);
+        res.json(newImagen);
+    } catch (err) {
+        res.json(err);
+    }
+
+});
 module.exports = router;
 

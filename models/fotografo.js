@@ -104,10 +104,23 @@ const getByCategory = ({ bodas, eventosnocturnos, producto, publicidad, paisaje,
     })
 }
 
+const image = (url) => {
+
+    return new Promise((resolve, reject) => {
+        db.query('INSERT INTO imagenes (url) values ?', [url], (err, result) => {
+            if (err) {
+                console.log(err);
+                return reject(err)
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
 
 
 
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, image
 }
