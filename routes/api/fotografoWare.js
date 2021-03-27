@@ -1,4 +1,4 @@
-const { updateById, deleteById } = require("../../models/fotografo");
+const { updateById, deleteById, updatePasswordFotografo } = require("../../models/fotografo");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { checkToken } = require("./middleware");
@@ -34,6 +34,17 @@ router.delete('/', checkToken, async (req, res) => {
 
     } catch (err) {
         res.json({ error: 'error 422' })
+    }
+})
+
+router.patch('/', checkToken, async (req, res) => {
+    try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        req.body.id = req.fotografoId;
+        const result = await updatePasswordFotografo(req.body)
+        res.json(result)
+    } catch (err) {
+        res.json({ error: 'error en patch fotografo' })
     }
 })
 

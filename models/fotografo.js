@@ -28,6 +28,24 @@ const updateById = ({ id, nombre, apellidos, direccion, email, password }) => {
     })
 }
 
+const updatePasswordFotografo = ({ password, id }) => {
+    return new Promise((resolve, reject) => {
+        db.query('UPDATE fotografos SET password = ? WHERE id = ?', [password, id], (err, result) => {
+            if (err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
+const updatePasswordCliente = ({ password, id }) => {
+    return new Promise((resolve, reject) => {
+        db.query('UPDATE clientes SET password = ? WHERE id = ?', [password, id], (err, result) => {
+            if (err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
         db.query('DELETE FROM fotografos WHERE id = ?', [id], (err, result) => {
@@ -114,5 +132,5 @@ const getByCategory = ({ bodas, eventosnocturnos, producto, publicidad, paisaje,
 
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, updatePasswordFotografo, updatePasswordCliente
 }
