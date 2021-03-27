@@ -37,14 +37,6 @@ const updatePasswordFotografo = ({ password, id }) => {
     })
 }
 
-const updatePasswordCliente = ({ password, id }) => {
-    return new Promise((resolve, reject) => {
-        db.query('UPDATE clientes SET password = ? WHERE id = ?', [password, id], (err, result) => {
-            if (err) return reject(err)
-            resolve(result)
-        })
-    })
-}
 
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
@@ -132,5 +124,5 @@ const getByCategory = ({ bodas, eventosnocturnos, producto, publicidad, paisaje,
 
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, updatePasswordFotografo, updatePasswordCliente
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, updatePasswordFotografo
 }

@@ -24,8 +24,8 @@ POST http://localhost:3000/api/clientes/login_cliente
 Content-Type:  application/json
 
 {
-    "email": "rosario@gmail.com",
-    "password": "1234"
+    "email": "beacampos@gmail.com",
+    "password": "Bea1234"
 }
 
 ###
@@ -41,6 +41,17 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE5LCJjYWR1
     "direccion": "calle seis",
     "email": "rosario@gmail.com",
     "password": "1234"
+}
+
+
+###
+PATCH  http://localhost:3000/api/clientes/private
+Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE4LCJjYWR1Y2EiOjE2MTY4NzczOTIsImlhdCI6MTYxNjg3NTU5Mn0.6NQ52fjTpzhCkxexzYePTpOdZy3sPqSzBCfMwOiKzqg
+
+{
+    "id": 18,
+    "password": "Beacampos1234"
 }
 
 
