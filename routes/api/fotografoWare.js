@@ -10,11 +10,12 @@ router.put('/', checkToken, async (req, res) => {
     try {
 
         req.body.password = bcrypt.hashSync(req.body.password, 10);
+        console.log(req.body);
         req.body.id = req.fotografoId;
 
         const fotografo = await updateById(req.body)
 
-        res.json(fotografo)
+        // res.json(fotografo)
         console.log('estas aqui', req.body);
     } catch (err) {
         res.json({ error: 'error update 422' })
