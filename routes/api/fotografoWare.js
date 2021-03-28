@@ -1,4 +1,4 @@
-const { updateById, deleteById, image } = require("../../models/fotografo");
+const { updateById, deleteById, image, getAllimages } = require("../../models/fotografo");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { checkToken } = require("./middleware");
@@ -9,7 +9,14 @@ const fs = require('fs')
 
 
 
-
+router.get('/imagenes', checkToken, async (req, res) => {
+    try {
+        const imagenes = await getAllimages();
+        res.json(imagenes)
+    } catch (error) {
+        res.json({ error: 'error 422 imagenes' })
+    }
+})
 
 router.put('/', checkToken, async (req, res) => {
     try {
@@ -58,7 +65,7 @@ router.post('/upload', checkToken, upload.single('imagen'), async (req, res) => 
 
 
     try {
-        const newImagen = await image(req.body);
+        const newImagen = await image(newName);
         console.log(req.body);
         res.json(newImagen);
     } catch (err) {
