@@ -2,11 +2,11 @@ POST  http://localhost:3000/api/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "davide",
-    "apellidos":"Zamora",
-    "direccion": "calla 7",
-    "email": "djn@gmail.com",
-    "password": "holadavide",
+    "nombre": "Prueba",
+    "apellidos":"Password",
+    "direccion": "calle 7",
+    "email": "password@gmail.com",
+    "password": "Password1234",
     "bodas": true,
     "paisaje": true,
     "retrato": true
@@ -21,8 +21,8 @@ POST http://localhost:3000/api/fotografos/login_fotografo
 Content-Type:  application/json
 
 {
-    "email": "andresromero@gmail.com",
-    "password": "Neoland1234"
+    "email": "botella@gmail.com",
+    "password": "Botella1234"
 }
 
 ###
@@ -60,6 +60,19 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjQsImNh
     "password": "holabea",
  
 }
+
+
+
+###
+PATCH  http://localhost:3000/api/fotografos/private
+Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjYsImNhZHVjYSI6MTYxNjg3Njg4MywiaWF0IjoxNjE2ODc1MDgzfQ.zGzKF8iTFvjN97zRiZ1zDrL3UqvYIRzTJN1nwq_BtuI
+
+{
+    "id": 26,
+    "password": "Botella123456"
+}
+
 
 ###
 

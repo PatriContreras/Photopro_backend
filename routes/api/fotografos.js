@@ -89,7 +89,9 @@ function createToken(fotografo) {
         fotografoId: fotografo.id,
         caduca: dayjs().add(30, 'minutes').unix()
     }
-    return jwt.sign(data, 'llave de acceso');
+    const token = jwt.sign(data, 'llave de acceso');
+    console.log(token);
+    return token;
 }
 
 module.exports = router;

@@ -23,6 +23,16 @@ const updateById = ({ id, nombre, apellidos, direccion, email, password }) => {
     })
 }
 
+const updatePasswordFotografo = ({ password, id }) => {
+    return new Promise((resolve, reject) => {
+        db.query('UPDATE fotografos SET password = ? WHERE id = ?', [password, id], (err, result) => {
+            if (err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
+
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
         db.query('DELETE FROM fotografos WHERE id = ?', [id], (err, result) => {
@@ -133,5 +143,6 @@ const getAllimages = () => {
 
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, image, getAllimages
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, image, getAllimages, updatePasswordFotografo,
+
 }

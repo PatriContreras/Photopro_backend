@@ -1,5 +1,5 @@
 
-const { getById, updateById, deleteById } = require("../../models/cliente");
+const { getById, updateById, deleteById, updatePasswordCliente } = require("../../models/cliente");
 const { checkTokenCliente } = require("./middleware")
 const bcrypt = require('bcrypt');
 
@@ -40,6 +40,19 @@ router.delete('/', checkTokenCliente, async (req, res) => {
     }
 
 });
+
+router.patch('/', checkTokenCliente, async (req, res) => {
+    try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        req.body.id = req.clienteId;
+        const result = await updatePasswordCliente(req.body)
+        res.json(result)
+    } catch (err) {
+        res.json({ error: 'error en patch cliente' })
+    }
+});
+
+
 module.exports = router;
 
 

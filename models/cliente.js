@@ -21,6 +21,15 @@ const updateById = ({ id, nombre, apellidos, direccion, email, password }) => {
     })
 }
 
+const updatePasswordCliente = ({ password, id }) => {
+    return new Promise((resolve, reject) => {
+        db.query('UPDATE clientes SET password = ? WHERE id = ?', [password, id], (err, result) => {
+            if (err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
         db.query('DELETE FROM clientes where id = ?', [id], (err, result) => {
@@ -71,5 +80,5 @@ const getByEmail = (email) => {
 }
 
 module.exports = {
-    getAll, create, getById, updateById, deleteById, getByEmail
+    getAll, create, getById, updateById, deleteById, getByEmail, updatePasswordCliente
 }
