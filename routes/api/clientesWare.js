@@ -1,5 +1,5 @@
 
-const { getById, updateById, deleteById, updatePasswordCliente } = require("../../models/cliente");
+const { getById, updateById, deleteById, updatePasswordCliente, addFavoritos } = require("../../models/cliente");
 const { checkTokenCliente } = require("./middleware")
 const bcrypt = require('bcrypt');
 
@@ -52,6 +52,15 @@ router.patch('/', checkTokenCliente, async (req, res) => {
     }
 });
 
+router.post('/favoritos', checkTokenCliente, async (req, res) => {
+    try {
+        const result = await addFavoritos(req.body);
+        console.log(req.body);
+        res.json(result)
+    } catch {
+        res.json({ error: 'error favoritos' })
+    }
+})
 
 module.exports = router;
 
