@@ -2,11 +2,11 @@ POST  http://localhost:3000/api/fotografos
 Content-Type:  application/json
 
 {
-    "nombre": "Prueba",
-    "apellidos":"Password",
-    "direccion": "calle 7",
-    "email": "password@gmail.com",
-    "password": "Password1234",
+    "nombre": "señor",
+    "apellidos":"estante",
+    "direccion": "calle 9",
+    "email": "señir@gmail.com",
+    "password": "1234",
     "bodas": true,
     "paisaje": true,
     "retrato": true
@@ -46,20 +46,24 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MzksImNh
 GET http://localhost:3000/api/fotografos
 
 ###
+GET http://localhost:3000/api/fotografos/perfil
+
+
+###
+
+GET http://localhost:3000/api/fotografos/vista_perfil/22
+
+###
+
+GET http://localhost:3000/api/fotografos/vista_perfil/39/portfolio
+
+###
 PUT http://localhost:3000/api/fotografos/private
 Content-Type:  application/json
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjQsImNhZHVjYSI6MTYxNjU5MTU2MiwiaWF0IjoxNjE2NTg5NzYyfQ.1Hhnyx0ymaAc6t4yHhKsSvEAQxJMcwuMUi_9CJmzvao
 
 
-{
-    "id": 24,
-    "nombre": "Zamora",
-    "apellidos":"Campos de la Oliva",
-    "direccion": "calle neolan",
-    "email": "a@gmail.com",
-    "password": "holabea",
- 
-}
+
 
 
 

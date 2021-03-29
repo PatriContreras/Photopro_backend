@@ -114,10 +114,10 @@ const getByCategory = ({ bodas, eventosnocturnos, producto, publicidad, paisaje,
     })
 }
 
-const image = (url) => {
+const image = (url, fk_fotografo) => {
 
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO imagenes (url) values (?)', [url], (err, result) => {
+        db.query('INSERT INTO imagenes (url, fk_fotografo) values (?,?)', [url, fk_fotografo], (err, result) => {
             if (err) {
                 console.log(err);
                 return reject(err)
@@ -141,8 +141,22 @@ const getAllimages = () => {
 
 }
 
+const getAllimagesByfotografo = (fk_fotografo) => {
+
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM imagenes where fk_fotografo= ?', [fk_fotografo], (err, result) => {
+            if (err) {
+                return reject(err)
+            }
+            resolve(result)
+
+        })
+    })
+}
+
+
 
 module.exports = {
-    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, image, getAllimages, updatePasswordFotografo,
+    create, getAll, updateById, deleteById, getById, getByEmail, getByCategory, image, getAllimages, updatePasswordFotografo, getAllimagesByfotografo
 
 }
