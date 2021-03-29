@@ -77,8 +77,23 @@ const getByEmail = (email) => {
             })
     })
 
+
+}
+
+const addFavoritos = ({ fk_fotografo, fk_usuario }) => {
+    return new Promise((resolve, reject) => {
+        db.query('INSERT INTO favoritos (fk_fotografo, fk_usuario) values (?,?)', [fk_fotografo, fk_usuario], (err, result) => {
+            if (err) {
+                console.log(err);
+                return reject(err)
+            } else {
+                resolve(result)
+            }
+
+        })
+    })
 }
 
 module.exports = {
-    getAll, create, getById, updateById, deleteById, getByEmail, updatePasswordCliente
+    getAll, create, getById, updateById, deleteById, getByEmail, updatePasswordCliente, addFavoritos
 }

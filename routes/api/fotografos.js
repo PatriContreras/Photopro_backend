@@ -79,8 +79,16 @@ router.get('/perfil', checkToken, async (req, res) => {
     } catch (err) {
         res.json({ error: '422' })
     }
-}) // OK
+})
 
+router.get('/vista_perfil', async (req, res) => {
+    try {
+        const fotografo = await getById(req.fotografoId)
+        res.json(fotografo)
+    } catch (err) {
+        res.json({ error: '422' })
+    }
+})
 
 
 

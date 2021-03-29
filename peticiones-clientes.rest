@@ -3,7 +3,7 @@ GET http://localhost:3000/api/clientes
 ###
 
 GET http://localhost:3000/api/clientes/private/perfil
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjIwLCJjYWR1Y2EiOjE2MTY2MDI0MDUsImlhdCI6MTYxNjYwMDYwNX0.DdSUKheva_oROFsp4nUHd85yHPTgS-M2oDkeHEGSbKk
+
 
 ###
 
@@ -11,10 +11,10 @@ POST http://localhost:3000/api/clientes
 Content-Type:  application/json
 
 {
-    "nombre": "ramon",
-    "apellidos":"contreras",
+    "nombre": "firulais",
+    "apellidos":"gomez",
     "direccion": "calle seis",
-    "email": "ramon@gmail.com",
+    "email": "firulais@gmail.com",
     "password": "1234"
 }
 ###
@@ -24,15 +24,30 @@ POST http://localhost:3000/api/clientes/login_cliente
 Content-Type:  application/json
 
 {
-    "email": "beacampos@gmail.com",
-    "password": "Bea1234"
+    "email": "firulais@gmail.com",
+    "password": "1234"
 }
+
+###
+POST http://localhost:3000/api/clientes/private/favoritos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjcsImNhZHVjYSI6MTYxNzAwNzk0NywiaWF0IjoxNjE3MDA2MTQ3fQ.nKn0NsCXTE66BbAn-6LhRy_xdM1ipk11tzqqt3WGHN0
+Content-Type:  application/json
+
+
+{
+    "fk_fotografo": 13,
+    "fk_usuario": 7
+}
+
+
+
+
 
 ###
 
 PUT http://localhost:3000/api/clientes/private
 Content-Type:  application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE5LCJjYWR1Y2EiOjE2MTY2MDIxNDAsImlhdCI6MTYxNjYwMDM0MH0.swHxuDScd1RZ-AU0LtyJgrRnmIHIzSpwXiG_y5TNLVs
+
 
 
 {
@@ -47,7 +62,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE5LCJjYWR1
 ###
 PATCH  http://localhost:3000/api/clientes/private
 Content-Type:  application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE4LCJjYWR1Y2EiOjE2MTY4NzczOTIsImlhdCI6MTYxNjg3NTU5Mn0.6NQ52fjTpzhCkxexzYePTpOdZy3sPqSzBCfMwOiKzqg
+
 
 {
     "id": 18,
@@ -58,4 +73,4 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE4LCJjYWR1
 ###
 
 DELETE http://localhost:3000/api/clientes/private
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjE5LCJjYWR1Y2EiOjE2MTY2MDIxNDAsImlhdCI6MTYxNjYwMDM0MH0.swHxuDScd1RZ-AU0LtyJgrRnmIHIzSpwXiG_y5TNLVs
+
