@@ -63,6 +63,7 @@ router.patch('/', checkToken, async (req, res) => {
 
 
 router.post('/upload', checkToken, upload.single('imagen'), async (req, res) => {
+
     // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
     const extension = '.' + req.file.mimetype.split('/')[1];
 
@@ -78,7 +79,7 @@ router.post('/upload', checkToken, upload.single('imagen'), async (req, res) => 
 
 
     try {
-        const newImagen = await image(newName);
+        const newImagen = await image(newName, req.fotografoId);
         console.log(req.body);
         res.json(newImagen);
     } catch (err) {

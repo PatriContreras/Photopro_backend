@@ -1,5 +1,5 @@
 
-const { create, getAll, getById, getByEmail, getByCategory } = require('../../models/fotografo');
+const { create, getAll, getById, getByEmail, getByCategory, getAllimagesByfotografo } = require('../../models/fotografo');
 const { checkToken } = require('./middleware')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -81,15 +81,29 @@ router.get('/perfil', checkToken, async (req, res) => {
     }
 })
 
-router.get('/vista_perfil', async (req, res) => {
+router.get('/vista_perfil/:fotografoId', async (req, res) => {
     try {
-        const fotografo = await getById(req.fotografoId)
+        console.log('req', req);
+        const fotografo = await getById(req.params.fotografoId)
+        console.log('id', req.fotografoId);
         res.json(fotografo)
     } catch (err) {
         res.json({ error: '422' })
     }
 })
 
+router.get('/vista_perfil/:fotografoId/portfolio', async (req, res) => {
+    try {
+        console.log('este es req:', req);
+        const fotografo = await getAllimagesByfotografo(req.params.fotografoId)
+        console.log('este es params:', req.params.fotografoId);
+        res.json(fotografo)
+
+    } catch (err) {
+        res.json({ error: '422' })
+
+    }
+})
 
 
 function createToken(fotografo) {
