@@ -94,6 +94,32 @@ const addFavoritos = (fk_fotografo, fk_usuario) => {
     })
 }
 
+// const getFavoritosByCliente = (fk_usuario) => {
+//     return new Promise((resolve, reject) => {
+//         db.query('SELECT * FROM favoritos WHERE fk_usuario = ?', [fk_usuario], (err, result) => {
+//             if (err) {
+//                 console.log(err);
+//                 return reject(err)
+//             } else {
+//                 resolve(result)
+//             }
+//         })
+//     })
+// }
+
+const getFavoritosByCliente = (fk_usuario) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT f.* FROM fotografos f, favoritos fav WHERE f.id = fav.fk_fotografo AND fav.fk_usuario = ?', [fk_usuario], (err, result) => {
+            if (err) {
+                console.log(err);
+                return reject(err)
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
+
 module.exports = {
-    getAll, create, getById, updateById, deleteById, getByEmail, updatePasswordCliente, addFavoritos
+    getAll, create, getById, updateById, deleteById, getByEmail, updatePasswordCliente, addFavoritos, getFavoritosByCliente
 }

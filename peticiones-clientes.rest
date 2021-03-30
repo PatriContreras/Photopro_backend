@@ -4,6 +4,12 @@ GET http://localhost:3000/api/clientes
 
 GET http://localhost:3000/api/clientes/private/perfil
 
+###
+
+GET http://localhost:3000/api/clientes/private/favoritos
+Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI1LCJjYWR1Y2EiOjE2MTcxMDQ2MzcsImlhdCI6MTYxNzEwMjgzN30.gyo3a1jEolJO5AGAKHTM2-3vMdQhUmqdLnxgatyrBvE
+
 
 ###
 
@@ -11,19 +17,11 @@ POST http://localhost:3000/api/clientes
 Content-Type:  application/json
 
 {
-<<<<<<< HEAD
-    "nombre": "laura",
+    "nombre": "Maria",
     "apellidos":"lopez",
     "direccion": "calle seis",
-    "email": "laura@gmail.com",
-    "password": "Laura1234"
-=======
-    "nombre": "firulais",
-    "apellidos":"gomez",
-    "direccion": "calle seis",
-    "email": "firulais@gmail.com",
-    "password": "1234"
->>>>>>> develop
+    "email": "maria@gmail.com",
+    "password": "Maria1234"
 }
 ###
 
@@ -32,13 +30,13 @@ POST http://localhost:3000/api/clientes/login_cliente
 Content-Type:  application/json
 
 {
-    "email": "laura@gmail.com",
-    "password": "Laura1234"
+    "email": "bea127@gmail.com",
+    "password": "Bea127"
 }
 
 ###
 POST http://localhost:3000/api/clientes/private/favoritos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTcwOTE5MDQsImlhdCI6MTYxNzA5MDEwNH0.8GEq9a17WOydX2K0nibrpJCjY4tkygBTmWwqDs4rZ9M
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTcxMDE3MTQsImlhdCI6MTYxNzA5OTkxNH0.OJ7QIJkSNqT-aETMP3ec38SgyDZu5i1QWZXLh48clvg
 Content-Type:  application/json
 
 
