@@ -87,5 +87,8 @@ router.post('/upload', checkToken, upload.single('imagen'), async (req, res) => 
     }
 
 });
+
+
+
 module.exports = router;
 

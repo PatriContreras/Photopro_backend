@@ -129,6 +129,7 @@ const image = (url, fk_fotografo) => {
 }
 
 
+
 const getAllimages = () => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM imagenes', (err, result) => {

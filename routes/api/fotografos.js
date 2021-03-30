@@ -126,6 +126,8 @@ router.get('/vista_perfil/:fotografoId/portfolio', async (req, res) => {
 })
 
 
+
+
 function createToken(fotografo) {
     const data = {
         fotografoId: fotografo.id,
