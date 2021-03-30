@@ -80,7 +80,7 @@ const getByEmail = (email) => {
 
 }
 
-const addFavoritos = ({ fk_fotografo, fk_usuario }) => {
+const addFavoritos = (fk_fotografo, fk_usuario) => {
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO favoritos (fk_fotografo, fk_usuario) values (?,?)', [fk_fotografo, fk_usuario], (err, result) => {
             if (err) {

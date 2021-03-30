@@ -32,19 +32,18 @@ POST http://localhost:3000/api/clientes/login_cliente
 Content-Type:  application/json
 
 {
-    "email": "firulais@gmail.com",
-    "password": "1234"
+    "email": "laura@gmail.com",
+    "password": "Laura1234"
 }
 
 ###
 POST http://localhost:3000/api/clientes/private/favoritos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjcsImNhZHVjYSI6MTYxNzAwNzk0NywiaWF0IjoxNjE3MDA2MTQ3fQ.nKn0NsCXTE66BbAn-6LhRy_xdM1ipk11tzqqt3WGHN0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTcwOTE5MDQsImlhdCI6MTYxNzA5MDEwNH0.8GEq9a17WOydX2K0nibrpJCjY4tkygBTmWwqDs4rZ9M
 Content-Type:  application/json
 
 
 {
-    "fk_fotografo": 13,
-    "fk_usuario": 7
+    "fk_fotografo": 14
 }
 
 

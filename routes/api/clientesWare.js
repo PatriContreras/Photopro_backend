@@ -54,8 +54,11 @@ router.patch('/', checkTokenCliente, async (req, res) => {
 
 router.post('/favoritos', checkTokenCliente, async (req, res) => {
     try {
-        const result = await addFavoritos(req.body);
-        console.log(req.body);
+        const result = await addFavoritos(req.body.fk_fotografo, req.clienteId);
+        console.log('body favoritos', req.body);
+        console.log('fk_fotografo', req.body.fk_fotografo);
+        console.log('clienteID', req.clienteId);
+
         res.json(result)
     } catch {
         res.json({ error: 'error favoritos' })
