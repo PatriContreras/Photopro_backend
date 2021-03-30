@@ -92,6 +92,26 @@ router.get('/vista_perfil/:fotografoId', async (req, res) => {
     }
 })
 
+router.get('/vista_perfil/:fotografoId/contacto', async (req, res) => {
+    try {
+        console.log('req', req);
+        const fotografo = await getById(req.params.fotografoId)
+        console.log('id', req.params.fotografoId);
+        res.json(fotografo)
+    } catch (err) {
+        res.json({ error: '422' })
+    }
+})
+router.get('/vista_perfil/:fotografoId/bio', async (req, res) => {
+    try {
+        console.log('req', req);
+        const fotografo = await getById(req.params.fotografoId)
+        console.log('id', req.params.fotografoId);
+        res.json(fotografo)
+    } catch (err) {
+        res.json({ error: '422' })
+    }
+})
 router.get('/vista_perfil/:fotografoId/portfolio', async (req, res) => {
     try {
         console.log('este es req:', req);
