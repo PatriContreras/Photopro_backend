@@ -6,8 +6,8 @@ const connect = () => {
     const pool = mysql.createPool({
         host: '127.0.0.1',
         user: 'root',
-        password: 'root',
-        port: 8889,
+        password: '',
+        port: 3306,
         database: 'photoprodb'
     });
     global.db = pool;
