@@ -13,6 +13,7 @@ const create = ({ nombre, apellidos, email, direccion, password }) => {
 }
 
 const updateById = ({ id, nombre, apellidos, direccion, email, password }) => {
+    console.log(`${nombre}`);
     return new Promise((resolve, reject) => {
         db.query('update clientes set nombre = ?, apellidos = ?, direccion = ?, email = ?, password = ? where id = ?', [nombre, apellidos, direccion, email, password, id], (err, result) => {
             if (err) return reject(err)

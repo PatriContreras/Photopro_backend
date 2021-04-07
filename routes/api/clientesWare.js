@@ -19,13 +19,14 @@ router.get('/perfil', checkTokenCliente, async (req, res) => {
 
 router.put('/', checkTokenCliente, async (req, res) => {
     try {
-
+        console.log(req.body.password);
         req.body.password = bcrypt.hashSync(req.body.password, 10);
         req.body.id = req.clienteId;
         const cliente = await updateById(req.body);
         res.json(cliente)
+        console.log('estás en el PUT', cliente);
     } catch {
-        res.json({ error: 'clinentes update error 422' })
+        res.json({ error: 'clientes update error 422' })
     }
 });
 

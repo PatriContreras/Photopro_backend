@@ -3,12 +3,14 @@ GET http://localhost:3000/api/clientes
 ###
 
 GET http://localhost:3000/api/clientes/private/perfil
+Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTc4MjM1MDEsImlhdCI6MTYxNzgyMTcwMX0.rLWD4E-d3IInwY_Z33cAOakeNNzhhCZZWhA7OTMj0eA
 
 ###
 
 GET http://localhost:3000/api/clientes/private/favoritos
 Content-Type:  application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI1LCJjYWR1Y2EiOjE2MTcxMDQ2MzcsImlhdCI6MTYxNzEwMjgzN30.gyo3a1jEolJO5AGAKHTM2-3vMdQhUmqdLnxgatyrBvE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTc4MjM1MDEsImlhdCI6MTYxNzgyMTcwMX0.rLWD4E-d3IInwY_Z33cAOakeNNzhhCZZWhA7OTMj0eA
 
 
 ###
@@ -30,8 +32,8 @@ POST http://localhost:3000/api/clientes/login_cliente
 Content-Type:  application/json
 
 {
-    "email": "bea127@gmail.com",
-    "password": "Bea127"
+    "email": "laura@gmail.com",
+    "password": "Laura1234"
 }
 
 ###
@@ -52,21 +54,23 @@ Content-Type:  application/json
 
 PUT http://localhost:3000/api/clientes/private
 Content-Type:  application/json
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTc4MjM1MDEsImlhdCI6MTYxNzgyMTcwMX0.rLWD4E-d3IInwY_Z33cAOakeNNzhhCZZWhA7OTMj0eA
 
 
 {
-    "nombre": "rosa",
-    "apellidos":"contreras",
+    "nombre": "Laurita",
+    "apellidos":"Lopez",
     "direccion": "calle seis",
-    "email": "rosario@gmail.com",
-    "password": "1234"
+    "email": "laura@gmail.com",
+    "password": "Laura1234"
 }
 
 
 ###
 PATCH  http://localhost:3000/api/clientes/private
 Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRlSWQiOjI0LCJjYWR1Y2EiOjE2MTc4MjM1MDEsImlhdCI6MTYxNzgyMTcwMX0.rLWD4E-d3IInwY_Z33cAOakeNNzhhCZZWhA7OTMj0eA
+
 
 
 {
