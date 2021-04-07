@@ -1,0 +1,8 @@
+###
+post http://localhost:3000/api/fotografos/imagen
+Content-Type:  application/json
+
+
+{
+    "url": "Desktop/neolandBootcamp/prueba.png"
+}

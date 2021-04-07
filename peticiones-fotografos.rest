@@ -1,0 +1,89 @@
+POST  http://localhost:3000/api/fotografos
+Content-Type:  application/json
+
+{
+    "nombre": "señor",
+    "apellidos":"estante",
+    "direccion": "calle 9",
+    "email": "señir@gmail.com",
+    "password": "1234",
+    "bodas": true,
+    "paisaje": true,
+    "retrato": true
+    
+}
+
+
+###
+
+
+POST http://localhost:3000/api/fotografos/login_fotografo
+Content-Type:  application/json
+
+{
+    "email": "botella@gmail.com",
+    "password": "Botella1234"
+}
+
+###
+
+
+POST http://localhost:3000/api/fotografos/filter
+Content-Type:  application/json
+
+{
+    "modelos": true,
+    "retrato": true,
+    "publicidad": true
+}
+
+
+###
+POST http://localhost:3000/images/fb5619993e9211fae8164d3e7e368d93.png
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MzksImNhZHVjYSI6MTYxNjg2NzIxMCwiaWF0IjoxNjE2ODY1NDEwfQ.klRH0wdWj1yIv91ggGe8fbJc1csySnrAVjhGhy2kjb4
+###
+
+GET http://localhost:3000/api/fotografos
+
+###
+GET http://localhost:3000/api/fotografos/perfil
+
+
+###
+
+GET http://localhost:3000/api/fotografos/vista_perfil/22
+
+###
+
+GET http://localhost:3000/api/fotografos/vista_perfil/39/portfolio
+
+###
+PUT http://localhost:3000/api/fotografos/private
+Content-Type:  application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjQsImNhZHVjYSI6MTYxNjU5MTU2MiwiaWF0IjoxNjE2NTg5NzYyfQ.1Hhnyx0ymaAc6t4yHhKsSvEAQxJMcwuMUi_9CJmzvao
+
+
+
+
+
+
+###
+PATCH  http://localhost:3000/api/fotografos/private
+Content-Type:  application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjYsImNhZHVjYSI6MTYxNjg3Njg4MywiaWF0IjoxNjE2ODc1MDgzfQ.zGzKF8iTFvjN97zRiZ1zDrL3UqvYIRzTJN1nwq_BtuI
+
+{
+    "id": 26,
+    "password": "Botella123456"
+}
+
+
+###
+
+DELETE http://localhost:3000/api/fotografos/private
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3RvZ3JhZm9JZCI6MjUsImNhZHVjYSI6MTYxNjU5ODYxMywiaWF0IjoxNjE2NTk2ODEzfQ.U30rIaT6eYdTRKIbUfIwijyrzvG1JLla3ctK_L_QmW0
+
+
+
+
+

@@ -1,64 +1,63 @@
-const { getAll, getById, create, updateById, deleteById } = require('../../models/cliente');
-
-
+const { getAll, create, getByEmail, getById } = require('../../models/cliente');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const dayjs = require('dayjs');
+const { checkTokenCliente } = require('./middleware');
 
 const router = require('express').Router();
 
-router.get('/', async (req, res) => {
+
+/* router.get('/', async (req, res) => {
     try {
         const clientes = await getAll();
         res.json(clientes)
     } catch (error) {
         res.json({ error: 'error 422' })
     }
-})
+}) */
 
-router.get('/:idCliente', async (req, res) => {
-    try {
-        //console.log('id', req.params.idCliente);
-        const clientes = await getById(req.params.idCliente);
-        res.json(clientes)
-    } catch {
-        res.json({ error: 'error 422' })
-
-    }
-
-
-})
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body)
+        req.body.password = bcrypt.hashSync(req.body.password, 10)
         const result = await create(req.body);
         res.json(result)
 
-
-
-    } catch {
-        res.json({ error: 'error 422' })
-
-    }
-})
-
-router.put('/', async (req, res) => {
-    try {
-        const result = await updateById(req.body);
-        res.json(result)
     } catch {
         res.json({ error: 'error 422' })
     }
 })
 
-router.delete('/:idCliente', async (req, res) => {
-    try {
-        //console.log('id', req.params.idCliente);
-        const result = await deleteById(req.params.idCliente);
-        res.json(result)
-    } catch {
-        res.json({ error: 'error 422' })
+router.post('/login_cliente', async (req, res) => {
+    const cliente = await getByEmail(req.body.email)
+    if (cliente) {
+        const iguales = bcrypt.compareSync(req.body.password, cliente.password);
+        if (iguales) {
+            res.json({
+                success: 'Login correcto',
+                token: createToken(cliente),
+                id: cliente.id
 
+            })
+        } else {
+            res.json({ error: 'Error en email y/o contraseña (contraseña' });
+        }
+    } else {
+        res.json({ error: 'error contraseña y/o email(email)' })
     }
 
 
-})
+});
+
+
+
+function createToken(cliente) {
+    const data = {
+        clienteId: cliente.id,
+        caduca: dayjs().add(30, 'minutes').unix()
+    }
+    return jwt.sign(data, 'llave de acceso')
+}
+
+
 module.exports = router;
